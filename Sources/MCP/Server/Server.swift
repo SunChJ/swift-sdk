@@ -181,7 +181,7 @@ public actor Server {
           do {
               // Attempt to decode as batch first, then as individual request or notification
             let decoder = JSONDecoder()
-            print("handle data", try decoder.decode(JSON.self, from: data))
+            print("handle data", try JSON(data: data))
             if let batch = try? decoder.decode(Server.Batch.self, from: data) {
               try await handleBatch(batch)
             } else if let request = try? decoder.decode(AnyRequest.self, from: data) {
