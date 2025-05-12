@@ -1,4 +1,4 @@
-// swift-tools-version:6.0
+// swift-tools-version:5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -18,7 +18,7 @@ var targetDependencies: [Target.Dependency] = [
 // Add EventSource only on Apple platforms (non-Linux)
 #if !os(Linux)
     dependencies.append(
-        .package(url: "https://github.com/loopwork-ai/eventsource.git", from: "1.1.0"))
+        .package(url: "https://github.com/SunChJ/EventSource.git", from: "1.0.0"))
     targetDependencies.append(.product(name: "EventSource", package: "eventsource"))
 #endif
 
